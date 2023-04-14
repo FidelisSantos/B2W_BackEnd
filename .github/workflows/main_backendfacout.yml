@@ -9,6 +9,15 @@ on:
       - main
   workflow_dispatch:
 
+env:
+  JWTKEY: ${{ secrets.JWTKEY }}
+  APIKEY: ${{ secrets.APIKEY }}
+  AUTHDOMAIN: ${{ secrets.AUTHDOMAIN }}
+  PROJECTID: ${{ secrets.PROJECTID }}
+  STORAGEBUCKET: ${{ secrets.STORAGEBUCKET }}
+  MESSAGINGSENDERID: ${{ secrets.MESSAGINGSENDERID }}
+  APPID: ${{ secrets.APPID }}
+  MEASUREMENTID: ${{ secrets.MEASUREMENTID }}
 jobs:
   build:
     runs-on: ubuntu-latest
