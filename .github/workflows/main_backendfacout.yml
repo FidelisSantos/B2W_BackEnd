@@ -18,6 +18,7 @@ env:
   MESSAGINGSENDERID: ${{ secrets.MESSAGINGSENDERID }}
   APPID: ${{ secrets.APPID }}
   MEASUREMENTID: ${{ secrets.MEASUREMENTID }}
+  PORT: ${{ secrets.PORT }}
 jobs:
   build:
     runs-on: ubuntu-latest
