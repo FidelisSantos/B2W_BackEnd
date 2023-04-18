@@ -63,4 +63,4 @@ jobs:
           app-name: 'backendfacout'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_A667A536EDC24977924D4B44380CF7FB }}
-          package: ./dist/
+          package: .
