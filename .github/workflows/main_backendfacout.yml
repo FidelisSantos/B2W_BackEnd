@@ -9,16 +9,6 @@ on:
       - main
   workflow_dispatch:
 
-env:
-  JWTKEY: ${{ secrets.JWTKEY }}
-  APIKEY: ${{ secrets.APIKEY }}
-  AUTHDOMAIN: ${{ secrets.AUTHDOMAIN }}
-  PROJECTID: ${{ secrets.PROJECTID }}
-  STORAGEBUCKET: ${{ secrets.STORAGEBUCKET }}
-  MESSAGINGSENDERID: ${{ secrets.MESSAGINGSENDERID }}
-  APPID: ${{ secrets.APPID }}
-  MEASUREMENTID: ${{ secrets.MEASUREMENTID }}
-  PORT: ${{ secrets.PORT }}
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -29,13 +19,13 @@ jobs:
       - name: Set up Node.js version
         uses: actions/setup-node@v1
         with:
-          node-version: '16.x'
+          node-version: '18.x'
 
       - name: npm install, build, and test
         run: |
-          npm i
-          npm run test --if-present
+          npm install
           npm run build --if-present
+          npm run test --if-present
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
@@ -62,5 +52,5 @@ jobs:
         with:
           app-name: 'backendfacout'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_A667A536EDC24977924D4B44380CF7FB }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_553968365B1E446CAC6796416BD47B38 }}
           package: .
